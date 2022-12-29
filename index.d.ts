@@ -2,17 +2,16 @@
  * created by: Eric Dao, Becky Wu from TTTStudios
  */
 
-
-declare module '@twotalltotems/react-native-otp-input' {
-  import * as React from 'react'
-  import { TextStyle, ViewStyle } from 'react-native';
+declare module "@twotalltotems/react-native-otp-input" {
+  import * as React from "react";
+  import { TextStyle, ViewStyle } from "react-native";
 
   /**
    * Define types of keyboard
    * There are 4 main types:
    * default, email-address, number-pad and phone-pad
    */
-  type KeyboardType = 'default' | 'email-address' | 'number-pad' | 'phone-pad';
+  type KeyboardType = "default" | "email-address" | "number-pad" | "phone-pad";
 
   export interface InputProps {
     /**
@@ -85,16 +84,24 @@ declare module '@twotalltotems/react-native-otp-input' {
     /**
      * Keyboard appearance. The value can be 'default', 'dark' or 'light'.
      */
-    keyboardAppearance?: 'default' | 'dark' | 'light';
+    keyboardAppearance?: "default" | "dark" | "light";
+    /**
+     * Dot Icon Appreance.
+     *
+     */
+    dotContainerStyle?: ViewStyle;
+    cursorColor?: string;
+    filledDotColor?: string;
+    unFilledDotColor?: string;
   }
 
   export interface OTPInputViewState {
-      digits: string[];
-      selectedIndex: number;
+    digits: string[];
+    selectedIndex: number;
   }
 
-  export default class OTPInputView extends React.Component<InputProps, OTPInputViewState> {
-
-  }
+  export default class OTPInputView extends React.Component<
+    InputProps,
+    OTPInputViewState
+  > {}
 }
-
